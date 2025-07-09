@@ -36,7 +36,7 @@ export default function Home() {
                     </Link>
 
                     <Link
-                        href="/static/docs/transcript.pdf"
+                        href="/static/docs/transcript_4.pdf"
                         download
                         className="rounded-full bg-black text-white font-semibold py-3 px-6 transition duration-300 ease-in-out text-center hover:bg-gray-800"
                     >

@@ -63,9 +63,9 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
-  const openModal = (src) => {
+  const openModal = (src: string) => {
     setModalImage(src);
   };
 
