@@ -2,7 +2,7 @@ import {FaLinkedin, FaGithub, FaInstagram} from "react-icons/fa";
 import {Common} from "@/lib/types";
 
 export default async function Footer({common}: { common: Common }) {
-  console.log("FOOTER DATA:", common);
+  // console.log("FOOTER DATA:", common);
   {
     return (
       <footer className="bg-gray-900 text-white py-6">
