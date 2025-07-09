@@ -23,3 +23,18 @@ export type AboutMe = {
     json: Document;
   };
 };
+
+export type ExperienceItem = {
+  roleTitle: string;
+  companyName: string;
+  companyUrl: string;
+  locationAndDate: string;
+  description: {
+    json: Document;
+  };
+};
+
+export type Experience = {
+  title: string;
+  experiences: ExperienceItem[];
+};

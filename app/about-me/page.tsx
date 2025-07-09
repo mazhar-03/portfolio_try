@@ -4,7 +4,7 @@ import { INLINES } from "@contentful/rich-text-types";
 
 export default async function AboutMe() {
   const aboutme = await getAboutMePage();
-  console.log("ABOUT-ME DATA", aboutme);
+  // console.log("ABOUT-ME DATA", aboutme);
 
   if (!aboutme) return null;
 
