@@ -28,9 +28,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  // common for navbar and footer
   const common = await getCommon();
-
   return (
     <html lang="en">
       <body className={`${ptserif.variable}`}>

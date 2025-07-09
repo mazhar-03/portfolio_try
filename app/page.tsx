@@ -5,7 +5,7 @@ import { getHomePage } from "@/lib/cms/homepage";
 
 export default async function Home() {
     const homepage = await getHomePage();
-    console.log(homepage)
+    console.log("HOMEPAGE DATA", homepage);
     return (
         <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 max-w-6xl mx-auto gap-12">
             <div className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden flex-shrink-0 shadow-lg">
