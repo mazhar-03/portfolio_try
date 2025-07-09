@@ -4,7 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  images: string[];
+  tech: string[];
+  github: string;
+};
+
+const projects: Project[] = [
   {
     title: "Appointment System",
     description:
@@ -57,15 +65,15 @@ const projects = [
       "/static/image/perceptron_2.png"
     ],
     tech: ["Java", "Machine Learning", "Swing GUI", "Data Visualization"],
-    github: "https://github.com/mazhar-03/NAI_mpp2"
+    github: "https://github.com/mazhar-03/mpp2"
   }
 
 ];
 
 export default function Projects() {
-  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalImage, setModalImage] = useState(null);
 
-  const openModal = (src: string) => {
+  const openModal = (src) => {
     setModalImage(src);
   };
 
