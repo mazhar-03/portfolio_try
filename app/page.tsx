@@ -40,7 +40,7 @@ export default function Home() {
                         download
                         className="rounded-full bg-black text-white font-semibold py-3 px-6 transition duration-300 ease-in-out text-center hover:bg-gray-800"
                     >
-                        Download Resume
+                        Download Transcript
                     </Link>
                 </div>
             </div>
