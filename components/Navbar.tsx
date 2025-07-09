@@ -1,8 +1,13 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
+import { Common } from "@/lib/types";
 
-export default function Navbar() {
+export default function Navbar({
+    common
+}:{
+    common: Common;
+}) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -49,7 +54,7 @@ export default function Navbar() {
 
                 <ul
                     className={`flex-col md:flex md:flex-row md:space-x-8 text-white absolute md:static top-16 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent transition-all
-                     ${isOpen ? "flex" : "hidden"}`}
+                    ${isOpen ? "flex" : "hidden"}`}
                 >
                     <li className="hover:text-green-300 transition px-6 py-3 md:p-0 border-b border-gray-700 md:border-none">
                         <Link href="/projects" onClick={() => setIsOpen(false)}>

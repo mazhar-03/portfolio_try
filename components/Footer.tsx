@@ -1,6 +1,10 @@
 import {FaLinkedin, FaGithub, FaInstagram} from "react-icons/fa";
 
-export default function Footer() {
+export default function Footer({
+    common
+}:{
+    common: any
+}) {
     return (
         <footer className="bg-gray-900 text-white py-6">
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
