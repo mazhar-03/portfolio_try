@@ -71,9 +71,10 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
-  const openModal = (src) => {
+  // explicitly type src as string
+  const openModal = (src: string) => {
     setModalImage(src);
   };
 
