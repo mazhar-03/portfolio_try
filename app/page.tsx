@@ -1,6 +1,4 @@
 // import Image from "next/image";
-import AboutMe from "@/app/about-me/page";
-import Projects from "@/app/projects/page"
 
 export default function Home() {
     return (

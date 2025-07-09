@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${ptserif.variable}`}>
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
