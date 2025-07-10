@@ -32,7 +32,7 @@ export default async function Home() {
                     <Link
                         href={homepage?.button1Url}
                         download
-                        className="rounded-full border-2 border-black bg-white text-black font-semibold py-3 px-6 transition duration-300 ease-in-out text-center hover:bg-gray-200"
+                        className="rounded-full border-2 border-black bg-gray-100 text-black font-semibold py-3 px-6 transition duration-300 ease-in-out text-center hover:bg-gray-200"
                     >
                         {homepage?.button1Text}
                     </Link>

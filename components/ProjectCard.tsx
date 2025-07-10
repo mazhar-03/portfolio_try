@@ -25,7 +25,7 @@ export default function ProjectCard({
 
     console.log(project)
 
-    const techArray = project.tech.split(" ");
+    const techArray = project.tech.split(",");
 
     return (
         <div>

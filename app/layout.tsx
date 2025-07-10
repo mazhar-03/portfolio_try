@@ -33,7 +33,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${ptserif.variable}`}>
+      <body className={`${ptserif.variable} bg-gray-300`}>
         <Navbar common={common}/>
         {children}
         <Footer common={common} />
