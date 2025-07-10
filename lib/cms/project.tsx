@@ -10,7 +10,7 @@ export const getProjectsPage = cache(async () => {
     `query {
       projectsPageCollection(
         limit: 1,
-        preview: true
+        preview: ${preview ? "true" : "false"}
       ) {
         items {
           title
@@ -35,6 +35,6 @@ export const getProjectsPage = cache(async () => {
     { tags: ["projects-page"] }
   );
 
-  console.log("PROJECTS PAGE DATA", entry)
+  console.log("RAW ENTRY", JSON.stringify(entry, null, 2));
   return entry?.data?.projectsPageCollection?.items?.[0];
 });
