@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Common } from "@/lib/types";
+import { NavItem } from "@/lib/types"
 
 export default function Navbar({ common }: { common: Common }) {
-    // console.log("NAVBAR DATA:", common);
+    console.log("NAVBAR DATA:", common);
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -53,16 +54,16 @@ export default function Navbar({ common }: { common: Common }) {
                   isOpen ? "flex" : "hidden"
                 }`}
               >
-                  {common.navItems.map((item, index) => (
+                    {common.navItemsCollection.items.map((item: NavItem, index: number) => (
                     <li
                       key={index}
                       className="hover:text-green-300 transition px-6 py-3 md:p-0 border-b border-gray-700 md:border-none"
                     >
-                        <Link href={item.url} onClick={() => setIsOpen(false)}>
-                            {item.label}
-                        </Link>
+                      <Link href={item.url} onClick={() => setIsOpen(false)}>
+                        {item.text}
+                      </Link>
                     </li>
-                  ))}
+                    ))}
               </ul>
           </div>
       </nav>

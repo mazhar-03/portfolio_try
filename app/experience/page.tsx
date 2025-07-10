@@ -2,8 +2,9 @@ import Link from "next/link";
 import {getExperiencePage} from "@/lib/cms/experience";
 
 export default async function Experience() {
-  const experience = await getExperiencePage();
-  console.log("HOME-PAGE DATA", experience);
+    const experience = await getExperiencePage();
+
+    console.log("HOME-PAGE DATA", experience);
     return (
         <section className="max-w-3xl h-screen mx-auto py-16 px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>

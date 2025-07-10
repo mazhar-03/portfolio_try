@@ -30,6 +30,7 @@ export default async function RootLayout({
 }>) {
   // common for navbar and footer
   const common = await getCommon();
+
   return (
     <html lang="en">
       <body className={`${ptserif.variable}`}>

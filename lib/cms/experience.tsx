@@ -13,16 +13,17 @@ export const getExperiencePage = cache(async () => {
         limit: 1
       ) {
         items {
-          title,
+          title
           experiencesCollection {
             items {
-              roleTitle,
-              companyName,
-              companyUrl,
-              locationAndDate,
-              description {
-                json
-              }
+                roleTitle
+                companyName
+                companyUrl
+                locationAndDate
+                description {
+                  json
+                }
+              
             }
           }
         }
@@ -31,5 +32,6 @@ export const getExperiencePage = cache(async () => {
     { tags: [`experience`] }
   );
 
+  console.log("EXPERIENCE OBJECT: ", entry)
   return entry?.data?.experienceCollection?.items?.[0];
 });
