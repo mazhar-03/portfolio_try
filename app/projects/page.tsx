@@ -5,7 +5,7 @@ import { Project } from "@/lib/types"
 export default async function Projects() {
 
   const projects = await getProjectsPage();
-  console.log(projects)
+  // console.log(projects)
 
   return (
     <section className="max-w-6xl container mx-auto px-4 py-20">

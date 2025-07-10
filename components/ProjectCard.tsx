@@ -23,7 +23,7 @@ export default function ProjectCard({
         setModalImage(null);
     };
 
-    console.log(project)
+    // console.log(project)
 
     const techArray = project.tech.split(",");
 

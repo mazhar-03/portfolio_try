@@ -31,7 +31,5 @@ export const getExperiencePage = cache(async () => {
     }`,
     { tags: [`experience`] }
   );
-
-  console.log("EXPERIENCE OBJECT: ", entry)
   return entry?.data?.experienceCollection?.items?.[0];
 });
