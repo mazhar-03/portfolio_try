@@ -35,5 +35,19 @@ export const getCommon = cache(async () => {
     { tags: [`common`] }
   );
 
-  return entry?.data?.commonCollection?.items?.[0];
+  const raw = entry?.data?.commonCollection?.items?.[0];
+
+  const navItems = [
+    { label: raw?.navItem1, url: raw?.navItem1Url },
+    { label: raw?.navItem2, url: raw?.navItem2Url },
+    { label: raw?.navItem3, url: raw?.navItem3Url },
+    { label: raw?.navItem4, url: raw?.navItem4Url },
+  ].filter(item => item?.label && item?.url);
+
+  return {
+    nameSurname: raw?.nameSurname,
+    footerCopyRight: raw?.footerCopyRight,
+    navItems,
+    socialMedia: raw.socialMediaCollection?.items || [],
+  };
 });
