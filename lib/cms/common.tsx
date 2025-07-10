@@ -36,7 +36,7 @@ export const getCommon = cache(async () => {
     { tags: [`common`] }
   );
 
-  console.log(entry)
+  // console.log(entry)
   
   return entry?.data?.commonCollection?.items?.[0];
 

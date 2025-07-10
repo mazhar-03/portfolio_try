@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import {Common, SocialMedia} from "@/lib/types";
 
 export default function Footer({ common }: { common: Common }) {
-  console.log("FOOTER DATA:", common);
+  // console.log("FOOTER DATA:", common);
   return (
     <footer className="bg-gray-900 text-white py-6">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">

@@ -38,6 +38,8 @@ export type ExperienceItem = {
 
 export type Experience = {
   title: string;
-  experiences: ExperienceItem[];
+  experiencesCollection: {
+    items: ExperienceItem[];
+  };
 };
 
