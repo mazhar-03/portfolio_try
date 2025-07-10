@@ -4,10 +4,12 @@ export type SocialMedia = {
   title: string;
   link: string;
 };
+
 export type NavItem = {
   text: string;
   url: string;
 };
+
 export type Common = {
   socialMediaCollection: {
     items: SocialMedia[];
@@ -53,15 +55,20 @@ export type ContactContent = {
 export type Project = {
   title: string;
   description: string;
-  tech: string[];
+  tech: string;
   github: string;
-  images: {
-    url: string;
-    title: string;
-  }[];
+  imagesCollection: {
+    items: ProjectImage[];
+  };
 };
 
 export type ProjectsPage = {
   title: string;
   projects: Project[];
 };
+
+export type ProjectImage = {
+  url: string;
+  width: number;
+  height: number;
+}

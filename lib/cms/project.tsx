@@ -1,11 +1,10 @@
-import {cache} from "react";
 import "server-only";
 import {fetchGraphQL, preview} from "@/lib/cms";
 
 /**
  * Get home page data from CMS
  */
-export const getProjectsPage = cache(async () => {
+export const getProjectsPage = async () => {
   const entry = await fetchGraphQL(
     `query {
       projectsPageCollection(
@@ -34,7 +33,5 @@ export const getProjectsPage = cache(async () => {
     }`,
     { tags: ["projects-page"] }
   );
-
-  console.log("RAW ENTRY", JSON.stringify(entry, null, 2));
   return entry?.data?.projectsPageCollection?.items?.[0];
-});
+};
