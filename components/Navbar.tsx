@@ -6,7 +6,7 @@ import { Common } from "@/lib/types";
 import { NavItem } from "@/lib/types"
 
 export default function Navbar({ common }: { common: Common }) {
-    console.log("NAVBAR DATA:", common);
+    // console.log("NAVBAR DATA:", common);
     const [isOpen, setIsOpen] = useState(false);
 
     return (

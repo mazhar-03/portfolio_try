@@ -4,13 +4,18 @@ export type SocialMedia = {
   title: string;
   link: string;
 };
-
+export type NavItem = {
+  text: string;
+  url: string;
+};
 export type Common = {
-  socialMedia: SocialMedia[];
+  socialMediaCollection: {
+    items: SocialMedia[];
+  },
   nameSurname: string;
   navItemsCollection: {
     items: NavItem[]
-  };
+  },
   footerCopyRight: string;
 };
 
@@ -36,7 +41,3 @@ export type Experience = {
   experiences: ExperienceItem[];
 };
 
-export type NavItem = {
-  text: string;
-  url: string;
-};
