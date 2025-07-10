@@ -43,3 +43,9 @@ export type Experience = {
   };
 };
 
+export type ContactContent = {
+  title: string;
+  text: string;
+  buttonText: string;
+  buttonUrl: string;
+};
