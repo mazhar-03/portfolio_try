@@ -49,3 +49,19 @@ export type ContactContent = {
   buttonText: string;
   buttonUrl: string;
 };
+
+export type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  images: {
+    url: string;
+    title: string;
+  }[];
+};
+
+export type ProjectsPage = {
+  title: string;
+  projects: Project[];
+};
