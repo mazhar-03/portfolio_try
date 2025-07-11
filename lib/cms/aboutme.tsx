@@ -20,7 +20,7 @@ export const getAboutMePage = async () => {
             }
         }`,
     // { tags: [`about-me`] }
-  ) as { data?: { aboutMeCollection?: { items?: Array<{ title: string; description: { json: any } }> } } };
+  ) as { data?: { aboutMeCollection?: { items?: Array<{ title: string; description: { json: unknown } }> } } };
 
   return entry?.data?.aboutMeCollection?.items?.[0];
 };
