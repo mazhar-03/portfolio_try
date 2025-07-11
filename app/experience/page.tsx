@@ -7,7 +7,7 @@ export default async function Experience() {
     const experience = await getExperiencePage();
     // console.log("EXPERIENCE DATA", experience);
     return (
-      <section className="max-w-3xl h-auto mx-auto py-16 px-4">
+      <section className="max-w-3xl min-h-screen mx-auto pt-24 sm:pt-32 pb-20">
           <h2 className="text-3xl font-bold mb-8 text-center">{experience.title}</h2>
 
           <div className="space-y-10">
