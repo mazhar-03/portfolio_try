@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import localFont from "next/font/local";
 
 import { getCommon } from "@/lib/cms/common";
+import {Common} from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,6 +23,23 @@ const ptserif = localFont({
     ],
 });
 
+function normalizeCommon(raw: unknown): Common {
+  // Use type assertion and fallback values
+  const data = raw as Partial<Common> | undefined;
+
+  return {
+    socialMediaCollection: {
+      items: data?.socialMediaCollection?.items ?? [],
+    },
+    navItemsCollection: {
+      items: data?.navItemsCollection?.items ?? [],
+    },
+    nameSurname: data?.nameSurname ?? "",
+    footerCopyRight: data?.footerCopyRight ?? "",
+  };
+}
+
+
 
 export default async function RootLayout({
   children,
@@ -29,15 +47,17 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // common for navbar and footer
-  const common = await getCommon();
+  const rawCommon = await getCommon();
+  const common: Common = normalizeCommon(rawCommon);
+
 
   return (
     <html lang="en">
-      <body className={`${ptserif.variable} bg-gray-300`}>
-        <Navbar common={common}/>
-        {children}
-        <Footer common={common} />
-      </body>
+    <body className={`${ptserif.variable} bg-gray-300`}>
+    <Navbar common={common} />
+    {children}
+    <Footer common={common} />
+    </body>
     </html>
   );
 }

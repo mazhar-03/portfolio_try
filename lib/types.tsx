@@ -57,9 +57,9 @@ export type Project = {
   description: string;
   tech: string;
   github: string;
-  imagesCollection: {
-    items: ProjectImage[];
-  };
+  imagesCollection?: {
+    items?: ProjectImage[];
+  } | null;
 };
 
 export type ProjectsPage = {

@@ -14,7 +14,6 @@ export default function ProjectCard({
 
     const [modalImage, setModalImage] = useState<string | null>(null);
     
-    //explicitly type image as string
     const openModal = (image: string) => {
         setModalImage(image);
     };
@@ -29,10 +28,10 @@ export default function ProjectCard({
 
     return (
         <div>
-            {project.imagesCollection.items.length === 1 ? (
+            {project?.imagesCollection?.items?.length === 1 ? (
                 <div
                     className="relative h-64 w-full cursor-pointer"
-                    onClick={() => openModal(project.imagesCollection.items[0].url)}
+                    onClick={() => openModal(project.imagesCollection?.items?.[0]?.url ?? '')}
                 >
                     <Image
                         src={project.imagesCollection.items[0].url}
@@ -44,7 +43,7 @@ export default function ProjectCard({
                 </div>
             ) : (
                 <div className="flex overflow-x-auto space-x-4 p-4">
-                    {project.imagesCollection.items.map((item: ProjectImage, i: number) => {
+                    {project.imagesCollection?.items?.map((item: ProjectImage, i: number) => {
                         console.log(item)
                         return(
                             <div

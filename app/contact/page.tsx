@@ -12,12 +12,12 @@ export default async function Contact() {
               {contact?.text}
             </p>
 
-            <Link
-                href={contact?.buttonUrl}
-                className="inline-block bg-blue-600 text-white font-medium sm:font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition"
-            >
-              {contact?.buttonText}
-            </Link>
+          <Link
+            href={contact?.buttonUrl ?? "/"} // fallback to "/" if undefined
+            className="inline-block bg-blue-600 text-white font-medium sm:font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition"
+          >
+            {contact?.buttonText}
+          </Link>
         </section>
     );
 }

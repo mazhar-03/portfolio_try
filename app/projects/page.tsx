@@ -12,7 +12,7 @@ export default async function Projects() {
       <h2 className="text-3xl font-bold text-center mb-12">{projects?.title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {projects.projectsCollection.items.map((project:Project, index:number) => (
+        {projects?.projectsCollection?.items?.map((project:Project, index:number) => (
           <div
             key={index}
             className="bg-white rounded-xl shadow-md hover:shadow-xl transition"

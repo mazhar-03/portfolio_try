@@ -15,20 +15,39 @@ export const getExperiencePage = async () => {
           title
           experiencesCollection {
             items {
-                roleTitle
-                companyName
-                companyUrl
-                locationAndDate
-                description {
-                  json
-                }
-              
+              roleTitle
+              companyName
+              companyUrl
+              locationAndDate
+              description {
+                json
+              }
             }
           }
         }
       }
     }`,
-    { tags: [`experience`] }
-  );
+    // { tags: ['experience'] }
+  ) as {
+    data?: {
+      experienceCollection?: {
+        items?: Array<{
+          title: string;
+          experiencesCollection?: {
+            items?: Array<{
+              roleTitle: string;
+              companyName: string;
+              companyUrl: string;
+              locationAndDate: string;
+              description: {
+                json: unknown;
+              };
+            }>;
+          };
+        }>;
+      };
+    };
+  };
+
   return entry?.data?.experienceCollection?.items?.[0];
 };

@@ -1,8 +1,8 @@
 import "server-only";
-import {fetchGraphQL, preview} from "@/lib/cms";
+import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
- * Get home page data from CMS
+ * Get projects page data from CMS
  */
 export const getProjectsPage = async () => {
   const entry = await fetchGraphQL(
@@ -31,7 +31,31 @@ export const getProjectsPage = async () => {
         }
       }
     }`,
-    { tags: ["projects-page"] }
-  );
+    // { tags: ['projects-page'] }
+  ) as {
+    data?: {
+      projectsPageCollection?: {
+        items?: Array<{
+          title: string;
+          projectsCollection?: {
+            items?: Array<{
+              title: string;
+              description: string;
+              tech: string;
+              github: string;
+              imagesCollection?: {
+                items?: Array<{
+                  url: string;
+                  width: number;
+                  height: number;
+                }>;
+              };
+            }>;
+          };
+        }>;
+      };
+    };
+  };
+
   return entry?.data?.projectsPageCollection?.items?.[0];
 };
