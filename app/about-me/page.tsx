@@ -7,7 +7,7 @@ export default async function AboutMe() {
   if (!aboutme) return null;
 
   return (
-    <section className="max-w-3xl mx-auto h-screen pt-24 sm:pt-32 pb-20 px-4 text-center">
+    <section className="max-w-3xl mx-auto min-h-screen flex flex-col pt-24 sm:pt-32 pb-20 px-4 text-center">
       <h2 className="text-3xl font-bold mb-4">{aboutme.title}</h2>
 
       <div className="text-lg text-gray-700 text-left space-y-4">
