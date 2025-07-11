@@ -19,7 +19,8 @@ export const getAboutMePage = async () => {
                 }
             }
         }`,
-    { tags: [`aboutme`] }
+    // { tags: [`about-me`] }
   );
+
   return entry?.data?.aboutMeCollection?.items?.[0];
 };
