@@ -10,8 +10,8 @@ export const preview = process.env.SITE_ENV !== "production";
 export async function fetchGraphQL(
   query: string,
   next = {},
-  variables: Record<string, any> = {},
-): Promise<any> {
+  variables: Record<string, unknown> = {},
+): Promise<unknown> {
   try {
     const response = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE}`,
