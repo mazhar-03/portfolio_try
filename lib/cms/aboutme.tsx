@@ -19,7 +19,7 @@ export const getAboutMePage = async () => {
                 }
             }
         }`,
-    { tags: [`about-me`] }
+    { tags: [`aboutme`] }
   );
   return entry?.data?.aboutMeCollection?.items?.[0];
 };
