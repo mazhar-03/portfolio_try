@@ -1,11 +1,10 @@
-import { cache } from "react";
 import "server-only";
 import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
  * Get experience page data from CMS
  */
-export const getExperiencePage = cache(async () => {
+export const getExperiencePage = async () => {
   const entry = await fetchGraphQL(
     `query {
       experienceCollection(
@@ -32,4 +31,4 @@ export const getExperiencePage = cache(async () => {
     { tags: [`experience`] }
   );
   return entry?.data?.experienceCollection?.items?.[0];
-});
+};

@@ -1,11 +1,10 @@
-import { cache } from "react";
 import "server-only";
 import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
  * Get home page data from CMS
  */
-export const getContactPage = cache(async () => {
+export const getContactPage = async () => {
   const entry = await fetchGraphQL(
     `query {
             contactCollection(
@@ -23,4 +22,4 @@ export const getContactPage = cache(async () => {
     { tags: [`contact`] }
   );
   return entry?.data?.contactCollection?.items?.[0];
-});
+};

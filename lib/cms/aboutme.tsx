@@ -1,11 +1,10 @@
-import { cache } from "react";
 import "server-only";
 import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
  * Get home page data from CMS
  */
-export const getAboutMePage = cache(async () => {
+export const getAboutMePage = async () => {
   const entry = await fetchGraphQL(
     `query {
             aboutMeCollection(
@@ -23,4 +22,4 @@ export const getAboutMePage = cache(async () => {
     { tags: [`aboutme`] }
   );
   return entry?.data?.aboutMeCollection?.items?.[0];
-});
+};

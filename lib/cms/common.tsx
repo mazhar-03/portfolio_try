@@ -1,11 +1,10 @@
-import { cache } from "react";
 import "server-only";
 import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
  * Get home page data from CMS
  */
-export const getCommon = cache(async () => {
+export const getCommon = async () => {
   const entry = await fetchGraphQL(
     `query {
             commonCollection(
@@ -37,7 +36,5 @@ export const getCommon = cache(async () => {
   );
 
   // console.log(entry)
-  
   return entry?.data?.commonCollection?.items?.[0];
-
-});
+};

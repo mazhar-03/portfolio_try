@@ -2,18 +2,16 @@
 export const preview = process.env.SITE_ENV !== "production";
 
 /**
- * Fetches data from the Contentful GraphQL API.
  *
- * @param query - GraphQL query string
- * @param next - Optional Next.js fetch options
- * @param variables - Optional GraphQL variables
- * @returns - The GraphQL response typed as generic T, or null on failure
+ * @param query GraphQL query
+ * @param next Next options
+ * @returns
  */
-export async function fetchGraphQL<T = unknown>(
+export async function fetchGraphQL(
   query: string,
-  next: RequestInit = {},
-  variables: Record<string, unknown> = {},
-): Promise<T | null> {
+  next = {},
+  variables: Record<string, any> = {},
+): Promise<any> {
   try {
     const response = await fetch(
       `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE}`,
@@ -36,12 +34,12 @@ export async function fetchGraphQL<T = unknown>(
           ...next,
         },
       },
-    );
+    )
 
-    const json = await response.json();
-    return json as T;
+    return response.json();
   } catch (error) {
-    console.error("GraphQL Fetch Error:", error);
-    return null;
+    console.error(error);
   }
+
+  return null;
 }

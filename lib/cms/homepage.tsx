@@ -1,11 +1,10 @@
-import { cache } from "react";
 import "server-only";
 import { fetchGraphQL, preview } from "@/lib/cms";
 
 /**
  * Get home page data from CMS
  */
-export const getHomePage = cache(async () => {
+export const getHomePage = async () => {
     const entry = await fetchGraphQL(
         `query {
             homeCollection(
@@ -32,4 +31,4 @@ export const getHomePage = cache(async () => {
     );
 
     return entry?.data?.homeCollection?.items?.[0];
-});
+};
